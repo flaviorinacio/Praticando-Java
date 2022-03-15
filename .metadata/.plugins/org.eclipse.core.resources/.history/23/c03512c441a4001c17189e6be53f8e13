@@ -1,0 +1,25 @@
+package com.aduilio.spring.service;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.aduilio.spring.repository.CustomerRepository;
+
+@ExtendWith(MockitoExtension.class)
+class CustomerServiceTest {
+
+	@Mock
+	private CustomerRepository customerRepository;
+
+	@InjectMocks
+	private PersonService personService;
+	
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

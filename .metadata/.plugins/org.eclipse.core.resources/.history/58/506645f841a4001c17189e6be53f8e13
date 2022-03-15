@@ -1,0 +1,30 @@
+package com.aduilio.spring.service;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.config.CustomEditorConfigurer;
+
+import com.aduilio.spring.repository.CustomerRepository;
+
+@ExtendWith(MockitoExtension.class)
+class CustomerServiceTest {
+
+	@Mock
+	private CustomerRepository customerRepositoryMock;
+
+	@InjectMocks
+	private CustomerService customerService;
+
+	@Test
+	void createWithValueShouldReturnId() {
+		Customer customer = new Customer();
+		
+		customerService.create(null)
+	}
+
+}

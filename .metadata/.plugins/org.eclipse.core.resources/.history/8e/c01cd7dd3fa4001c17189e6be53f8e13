@@ -1,0 +1,6 @@
+package com.aduilio.spring.controller;
+
+@Controller
+public class HtmlController {
+
+}

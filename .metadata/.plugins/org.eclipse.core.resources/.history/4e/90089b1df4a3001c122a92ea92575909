@@ -1,0 +1,5 @@
+package com.aduilio.spring.exception;
+
+public class CustomerNotFoundException {
+
+}

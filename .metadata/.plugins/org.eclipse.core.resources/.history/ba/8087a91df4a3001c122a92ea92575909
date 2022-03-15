@@ -1,0 +1,6 @@
+package com.aduilio.spring.exception;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class CustomerNotFoundException {
+
+}

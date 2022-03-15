@@ -1,0 +1,5 @@
+package com.aduilio.spring.entity;
+
+public class Customer {
+
+}

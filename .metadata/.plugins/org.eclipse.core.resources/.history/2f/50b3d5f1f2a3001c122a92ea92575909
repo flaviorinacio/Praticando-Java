@@ -1,0 +1,6 @@
+package com.aduilio.spring.service;
+
+@Service
+public class CustomerService {
+
+}

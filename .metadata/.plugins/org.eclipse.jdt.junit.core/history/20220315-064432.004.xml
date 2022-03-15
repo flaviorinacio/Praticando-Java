@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CustomerServiceTest" project="spring-demo" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.aduilio.spring.service.CustomerServiceTest" time="0.858" displayname="CustomerServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.aduilio.spring.service.CustomerServiceTest]">
+    <testcase name="createWithValueShouldReturnId" classname="com.aduilio.spring.service.CustomerServiceTest" time="0.855" displayname="createWithValueShouldReturnId()" uniqueid="[engine:junit-jupiter]/[class:com.aduilio.spring.service.CustomerServiceTest]/[method:createWithValueShouldReturnId()]"/>
+    <testcase name="readWithValueShouldReturnCustomer" classname="com.aduilio.spring.service.CustomerServiceTest" time="0.003" displayname="readWithValueShouldReturnCustomer()" uniqueid="[engine:junit-jupiter]/[class:com.aduilio.spring.service.CustomerServiceTest]/[method:readWithValueShouldReturnCustomer()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,18 @@
+package com.aduilio.spring.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.aduilio.spring.entity.Customer;
+import com.aduilio.spring.repository.CustomerRepository;
+
+@Service
+public class CustomerService {
+
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	public Long create(Customer customer) {
+
+	}
+}

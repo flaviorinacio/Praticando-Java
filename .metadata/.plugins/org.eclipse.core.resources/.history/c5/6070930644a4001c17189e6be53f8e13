@@ -1,0 +1,57 @@
+package com.aduilio.spring.controller;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+
+import com.aduilio.spring.service.CustomerService;
+
+@ExtendWith(MockitoExtension.class)
+class CustomerControllerTest {
+
+	private static final String URL = "/api/v1/customer";
+
+	private MockMvc mockMvc;
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+	@Mock
+	private CustomerService mockCustomerService;
+
+	@InjectMocks
+	private CustomerController personController;
+
+	@BeforeEach
+	void setup() {
+		mockMvc = MockMvcBuilders.standaloneSetup(personController)
+				.setCustomArgumentResolvers(new PageableHandlerMethodArgumentResolver())
+				.setViewResolvers((viewName, locale) -> new MappingJackson2JsonView())
+				.build();
+	}
+	
+	@Test
+	void createWithValidPayloadShouldReturnId() throws Exception {
+		Customer customer = new Customer();
+
+		when(mockCustomerService.create(personDto)).thenReturn(personDto.getId());
+
+		mockMvc.perform(post(URL).contentType(MediaType.APPLICATION_JSON)
+				.content(new ObjectMapper().writeValueAsString(personDto))
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isCreated())
+				.andExpect(jsonPath("$.id").isNotEmpty());
+	}
+	
+}

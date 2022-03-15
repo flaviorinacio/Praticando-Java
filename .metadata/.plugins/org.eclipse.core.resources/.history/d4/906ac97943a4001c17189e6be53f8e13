@@ -1,0 +1,17 @@
+package com.aduilio.spring.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+@ExtendWith(MockitoExtension.class)
+class CustomerControllerTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
+
+
