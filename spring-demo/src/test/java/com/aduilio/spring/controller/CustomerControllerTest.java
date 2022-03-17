@@ -1,7 +1,6 @@
 package com.aduilio.spring.controller;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -31,23 +30,17 @@ class CustomerControllerTest {
 
 	private MockMvc mockMvc;
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
 	@Mock
 	private CustomerService mockCustomerService;
 
 	@InjectMocks
-	private CustomerController personController;
+	private CustomerController customerController;
 
 	@BeforeEach
 	void setup() {
-		mockMvc = MockMvcBuilders.standaloneSetup(personController)
+		mockMvc = MockMvcBuilders.standaloneSetup(customerController)
 				.setCustomArgumentResolvers(new PageableHandlerMethodArgumentResolver())
-				.setViewResolvers((viewName, locale) -> new MappingJackson2JsonView())
-				.build();
+				.setViewResolvers((viewName, locale) -> new MappingJackson2JsonView()).build();
 	}
 
 	@Test
@@ -64,12 +57,9 @@ class CustomerControllerTest {
 		when(mockCustomerService.create(customer)).thenReturn(id);
 
 		mockMvc.perform(post(URL).contentType(MediaType.APPLICATION_JSON)
-				.content(new ObjectMapper().writeValueAsString(customer))
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isCreated())
-				.andExpect(jsonPath("$.id", is(id)))
-				.andExpect(jsonPath("$.name", is(name)))
-				.andExpect(jsonPath("$.name", is(phone)));
+				.content(new ObjectMapper().writeValueAsString(customer)).accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isCreated()).andExpect(jsonPath("$.id", is(id)))
+				.andExpect(jsonPath("$.name", is(name))).andExpect(jsonPath("$.name", is(phone)));
 	}
 
 	@Test
@@ -85,10 +75,8 @@ class CustomerControllerTest {
 
 		when(mockCustomerService.read(id)).thenReturn(customer);
 
-		mockMvc.perform(get(URL + "/" + id).accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.id", is(id)))
-				.andExpect(jsonPath("$.name", is(name)))
+		mockMvc.perform(get(URL + "/" + id).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andExpect(jsonPath("$.id", is(id))).andExpect(jsonPath("$.name", is(name)))
 				.andExpect(jsonPath("$.name", is(phone)));
 	}
 }

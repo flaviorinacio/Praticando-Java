@@ -36,4 +36,13 @@ public class CustomerService {
 		return customerRepository.findById(id)
 				.orElseThrow(() -> new CustomerNotFoundException(id));
 	}
+
+	/**
+	 * Update a customer.
+	 *
+	 * @param customer to be updated
+	 */
+	public void update(Customer customer) {
+		customerRepository.save(customer);
+	}
 }
