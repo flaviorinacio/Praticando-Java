@@ -44,5 +44,14 @@ public class CustomerService {
 	 */
 	public void update(Customer customer) {
 		customerRepository.save(customer);
+		
+	}	
+	/**
+	 * Delete a customer
+	 * @param customer to be delete
+	 */
+	public void delete (Long id) {
+		
+		customerRepository.deleteById(id);
 	}
 }
