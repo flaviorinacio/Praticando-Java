@@ -19,9 +19,11 @@ public class Customer {
 	@Column(nullable = false)
 	private String phone;
 	
+	private String email;
+	
 	private String cpf;
 	
-
+	
 	public String getCpf() {
 		return cpf;
 	}
@@ -29,13 +31,21 @@ public class Customer {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {
