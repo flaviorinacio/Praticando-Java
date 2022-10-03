@@ -101,7 +101,7 @@ public class AulaIntroducaoAoJavaApplication {
 				System.out.print(matriz2[x][y]);
 			} // fim do for coluna(x)
 			System.out.println();// pulando linha
-		} // fim for linha(y)
+		} // fim for linha(y) 
 		/*****************************************************************************************/
 
 	}// fim do main
